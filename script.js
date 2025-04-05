@@ -1,25 +1,82 @@
-"use strict mode";
+'use strict mode';
 
-// Korean numbers.
-const oneKor = "하나";
-const twoKor = "둘";
-const threeKor = "셋";
-const fourKor = "넷";
-const fiveKor = "다섯";
-const sixKor = "여섯";
-const sevenKor = "일곱";
-const eightKor = "여덟";
-const nineKor = "아홉";
-const tenKor = "열";
+const sentenceSlicers = {
+  i: '저',
+  you: '너',
+  small: '작아요',
+  big: '커요',
+  here: '여기',
+  there: '거기',
+  isVowel: '에요',
+  isConsonant: '이에요',
+  isNot: '아니에요',
+  topicVowel: '는',
+  topicConsonant: '은',
+  subjectVowel: '가',
+  subjectConsonant: '이',
+  possessive: '의',
+  location: '에',
+};
 
-// Chinese numbers.
-const oneChin = "일";
-const twoChin = "이";
-const threeChin = "삼";
-const fourChin = "사";
-const fiveChin = "오";
-const sixChin = "육";
-const sevenChin = "칠";
-const eightChin = "팔";
-const nineChin = "구";
-const tenChin = "십";
+const animals = {
+  animal1: {
+    picture: '🐶',
+    nameEnglish: 'dog',
+    nameKorean: '개',
+  },
+  animal2: {
+    picture: '🐱',
+    nameEnglish: 'cat',
+    nameKorean: '고양이',
+  },
+  animal3: {
+    picture: '🐭',
+    nameEnglish: 'mouse',
+    nameKorean: '쥐',
+  },
+  animal4: {
+    picture: '🐴',
+    nameEnglish: 'horse',
+    nameKorean: '말',
+  },
+  animal5: {
+    picture: '🐮',
+    nameEnglish: 'cow',
+    nameKorean: '암소',
+  },
+};
+
+/* 
+5 animals: dog, cat, mouse, horse, giraffe
+
+levels: 
+1) ...
+Show a picture of the animal and choose the correct word.
+
+2) It's a...
+The word is given, need to add "is" ending (어요).
+
+3) ... is small/big.
+The word is given, need to add topic marker.
+
+4) My/Your ... is small/big
+The word with the topic marker is given, need to add the possessive marker.
+
+5) My/Your ... is here/there.
+The word with the topic marker and the possessive marker are given, need to add the location marker.
+
+Random choices:
+- animal
+- small/big
+- me/you
+- here/there
+*/
+
+console.log(animals.animal1.nameKorean);
+console.log(sentenceSlicers.isVowel, sentenceSlicers.isConsonant);
+console.log(
+  animals.animal1.nameKorean.replace(
+    animals.animal1.nameKorean,
+    animals.animal1.nameKorean + sentenceSlicers.isVowel
+  )
+);
